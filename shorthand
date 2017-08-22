@@ -1,0 +1,265 @@
+include(/home/gako/tmp/definitions)
+ObMenu_
+  MIL(root-menu,Openbox 3)
+    IL(Run)
+      AX
+        X(gmrun)
+      _A  
+    _I
+    S
+    IL(Terminal)
+      AX
+        X(TERM)
+      _A
+    _I
+    IL(Web Browser)
+      AX
+        X(x-www-browser)
+      _A
+    _I
+    IL(File Manager)
+      AX
+        X(bl-file-manager)
+      _A
+    _I
+    IL(Text Editor)
+      AX
+        X(bl-text-editor)
+      _A
+    _I
+    IL(Media Player)
+      AX
+        X(bl-media-player)
+      _A
+    _I
+    S
+    MIL(accessories,Accessories)  
+      IL(Catfish File Search)
+        AX
+          X(catfish)
+        _A
+      _I
+      IL(Archive Manager)
+        AX
+          X(file-roller)
+        _A
+      _I
+      IL(Task Manager (htop))
+        AX
+          X(TERM -T 'htop task manager' -e htop)
+        _A
+      _I
+    _M
+    MXIL(bl-graphics-pipemenu,bl-graphics-pipemenu,Graphics)    
+    MXIL(bl-multimedia-pipemenu,bl-multimedia-pipemenu,Multimedia)
+    MIL(network,Network)
+      MXIL(bl-x-www-browser-pipemenu,wwwbrowsers,WWW Browsers,)
+      IL(Filezilla FTP Client)
+        AX
+          X(filezilla)
+        _A
+      _I
+      IL(Transmission BitTorrent Client)
+        AX
+          X(transmission-gtk)
+        _A
+      _I
+      IL(HexChat IRC Client)
+        AX
+          X(hexchat)
+        _A
+      _I
+      IL(Remote Filesystems)
+        AX
+          X(gigolo)
+        _A
+      _I
+      MXIL(bl-remote-desktop-pipemenu,remotedesktop,Remote Desktop)
+      MXIL(bl-sshconfig-pipemenu,sshconfig,SSH)
+      SL(Services)    
+      MXIL(bl-dropbox-pipemenu,dropbox,Dropbox)
+    _M
+    MIL(office,Office)
+      MXIL(bl-libreoffice-pipemenu,libreoffice,LibreOffice)
+      IL(Google Docs)
+        AX
+          X(x-www-browser https://drive.google.com/)
+        _A
+      _I
+      IL(Gnumeric Spreadsheet)
+        AX
+          X(gnumeric)
+        _A
+      _I
+        IL(Calculator)
+        AX
+          X(galculator)
+        _A
+      _I
+        IL(Evince PDF Viewer)
+        AX
+          X(evince)
+        _A
+      _I
+    _M
+    S
+    MXIL(bl-places-pipemenu,pipe-placesmenu,Places)
+    MXIL(bl-recent-files-pipemenu -rl15,pipe-recentfilesmenu,Recent Files)
+    S
+    MIL(preferences,Preferences)
+      MIL(obConfig,Openbox)
+        IL(Edit menu.xml)
+          AX
+            X(bl-text-editor OB/menu.xml)
+          _A
+        _I
+        IL(Edit rc.xml)
+          AX
+            X(bl-text-editor OB/rc.xml)
+          _A
+        _I
+        IL(Edit autostart)
+          AX
+            X(bl-text-editor ~/.config/openbox/autostart)
+          _A
+        _I
+        IL(GUI Menu Editor)
+          AX
+            X(obmenu)
+          _A
+        _I
+        IL(GUI Config Tool)
+          AX
+            X(obconf)
+          _A
+        _I
+        IL(How to Edit Menu)
+          AX
+            X(zenity --text-info --title=&quot;How to Edit the Menu&quot; --filename=&quot;/usr/share/bunsen/bunsen-docs/helpfile-menu.txt&quot; --width=900 --height=700)
+          _A
+        _I
+        IL(Reconfigure)
+          AN(Reconfigure)
+        _I
+        IL(Restart)
+          AN(Restart)
+        _I
+      _M
+      MXIL(bl-compositor,CompositingPipeMenu,Compositor)
+      MXIL(bl-conky-pipemenu,pipe-conkymenu,Conky)
+      MXIL(bl-tint2-pipemenu,pipe-tint2menu,Tint2)
+        IL(Appearance)
+          AX
+            X(lxappearance)
+          _A
+        _I
+        IL(Choose Wallpaper)
+          AX
+            X(nitrogen)
+          _A
+        _I
+        IL(Notifications)
+          AX
+            X(xfce4-notifyd-config)
+          _A
+        _I
+        IL(Power Management)
+          AX
+            X(xfce4-power-manager-settings)
+          _A
+        _I
+        MIL(dmenuconfig,dmenu)
+          IL(Edit Start-up Script)
+            AX
+              X(bl-text-editor ~/.config/dmenu/dmenu-bind.sh)
+            _A
+          _I
+          SL(Help?)
+          IL(man page)
+            AX
+              X(TERM -T 'man dmenu' -e man dmenu)
+            _A
+          _I
+        _M
+        MIL(gmrunconfig,gmrun)
+          IL(Edit Config File)
+            AX
+              X(bl-text-editor ~/.gmrunrc)
+            _A
+          _I
+          SL(Help?)
+          IL(man page)
+            AX
+              X(TERM -T 'man gmrun' -e man gmrun)
+            _A
+          _I
+        _M
+        MIL(DisplaySettings,Display)
+          IL(ARandR Screen Layout Editor)
+            AX
+              X(arandr)
+            _A
+          _I
+          SL(Help?)
+          IL(man xrandr)
+            AX
+              X(TERM -T 'man xrandr' -e man xrandr)
+            _A
+          _I
+        _M
+    _M
+    MIL(system,System)
+      MXIL(bl-printing-pipemenu,PrintingPipeMenu,Printers)
+      IL(Synaptic Package Manager)
+        AX
+          X(gksudo synaptic)
+        _A
+      _I
+      IL(File Manager as root)
+        AX
+          X(gksudo bl-file-manager)
+        _A
+      _I
+      IL(Text Editor as root)
+        AX
+          X(gksudo bl-text-editor)
+        _A
+      _I
+      IL(Login Settings)
+        AX
+          X(gksudo bl-text-editor /etc/lightdm/lightdm-gtk-greeter.conf /etc/lightdm/lightdm.conf)
+        _A
+      _I
+      IL(GParted)
+        AX
+          X(gksudo gparted)
+        _A
+      _I
+      IL(Edit Debian Alternatives)
+        AX
+          X(gksudo galternatives)
+        _A
+      _I
+      S
+      IL(About Bunsen Alternatives)
+        AX
+          X(zenity --text-info --title=&quot;About Bunsen Alternatives&quot; --filename=&quot;/usr/share/bunsen/bunsen-docs/helpfile-bl-alternatives.txt&quot; --width=900 --height=700)
+        _A
+      _I
+    _M
+    MXIL(bl-help-pipemenu,help,Help)
+    S
+    MXIL(bl-kb-pipemenu,keybinds,Display Keybinds)
+    S
+    IL(Lock Screen)
+      AX
+        X(bl-lock)
+      _A
+    _I
+    IL(Exit)
+      AX
+        X(bl-exit)
+      _A
+    _I
+  _M  
+_ObMenu

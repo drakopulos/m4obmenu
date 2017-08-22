@@ -1,0 +1,93 @@
+include(/home/gako/tmp/definitions)
+ObMenu_
+  MIL(root-menu,Openbox 3)
+    _exec(Run,gmrun)
+    S
+    _exec(Terminal, TERM)
+    _exec(Web Browser,x-www-browser)
+    _exec(File Manager,bl-file-manager)
+    _exec(Text Editor,bl-text-editor)
+    _exec(Media Player,bl-media-player)
+    S
+    MIL(accessories,Accessories)  
+    _exec(Catfish File Search,catfish)
+    _exec(Archive Manager,file-roller)
+    _exec(Task Manager (htop),TERM -T 'htop task manager' -e htop)
+    _M
+    MXIL(bl-graphics-pipemenu,bl-graphics-pipemenu,Graphics)    
+    MXIL(bl-multimedia-pipemenu,bl-multimedia-pipemenu,Multimedia)
+    MIL(network,Network)
+      MXIL(bl-x-www-browser-pipemenu,wwwbrowsers,WWW Browsers,)
+      _exec(Filezilla FTP Client,filezilla)
+      _exec(Transmission BitTorrent Client,transmission-gtk)
+      _exec(HexChat IRC Client,hexchat)
+      _exec(Remote Filesystems,gigolo)
+      MXIL(bl-remote-desktop-pipemenu,remotedesktop,Remote Desktop)
+      MXIL(bl-sshconfig-pipemenu,sshconfig,SSH)
+      SL(Services)    
+      MXIL(bl-dropbox-pipemenu,dropbox,Dropbox)
+    _M
+    MIL(office,Office)
+      MXIL(bl-libreoffice-pipemenu,libreoffice,LibreOffice)
+      _exec(Google Docs,x-www-browser https://drive.google.com/)
+      _exec(Gnumeric Spreadsheet,gnumeric)
+      _exec(Calculator,galculator)
+      _exec(Evince PDF Viewer,evince)
+    _M
+    S
+    MXIL(bl-places-pipemenu,pipe-placesmenu,Places)
+    MXIL(bl-recent-files-pipemenu -rl15,pipe-recentfilesmenu,Recent Files)
+    S
+    MIL(preferences,Preferences)
+      MIL(obConfig,Openbox)
+        _exec(Edit menu.xml,bl-text-editor OB/menu.xml)
+        _exec(Edit rc.xml,bl-text-editor OB/rc.xml)
+        _exec(Edit autostart,bl-text-editor ~/.config/openbox/autostart)
+        _exec(GUI Menu Editor,obmenu)
+        _exec(GUI Config Tool,obconf)
+        _exec(How to Edit Menu,zenity --text-info --title=&quot;How to Edit the Menu&quot; --filename=&quot;/usr/share/bunsen/bunsen-docs/helpfile-menu.txt&quot; --width=900 --height=700)
+        IL(Reconfigure) AN(Reconfigure) _I
+        IL(Restart) AN(Restart) _I
+      _M
+      MXIL(bl-compositor,CompositingPipeMenu,Compositor)
+      MXIL(bl-conky-pipemenu,pipe-conkymenu,Conky)
+      MXIL(bl-tint2-pipemenu,pipe-tint2menu,Tint2)
+        _exec(Appearance,lxappearance)
+        _exec(Choose Wallpaper,nitrogen)
+        _exec(Notifications,xfce4-notifyd-config)
+        _exec(Power Management,xfce4-power-manager-settings)
+        MIL(dmenuconfig,dmenu)
+          _exec(Edit Start-up Script,bl-text-editor ~/.config/dmenu/dmenu-bind.sh)
+          SL(Help?)
+          _exec(man page,TERM -T 'man dmenu' -e man dmenu)
+        _M
+        MIL(gmrunconfig,gmrun)
+          _exec(Edit Config File,bl-text-editor ~/.gmrunrc)
+          SL(Help?)
+          _exec(man page,TERM -T 'man gmrun' -e man gmrun)
+        _M
+        MIL(DisplaySettings,Display)
+          _exec(ARandR Screen Layout Editor,arandr)
+          SL(Help?)
+          _exec(man xrandr,TERM -T 'man xrandr' -e man xrandr)
+        _M
+    _M
+    MIL(system,System)
+      MXIL(bl-printing-pipemenu,PrintingPipeMenu,Printers)
+      _exec(Synaptic Package Manager,gksudo synaptic)
+      _exec(File Manager as root,gksudo bl-file-manager)
+      _exec(Text Editor as root,gksudo bl-text-editor)
+      _exec(Login Settings,gksudo bl-text-editor /etc/lightdm/lightdm-gtk-greeter.conf /etc/lightdm/lightdm.conf)
+      _exec(GParted,gksudo gparted)
+      _exec(Edit Debian Alternatives,gksudo galternatives)
+      S
+      _exec(About Bunsen Alternatives,zenity --text-info --title=&quot;About Bunsen Alternatives&quot; --filename=&quot;/usr/share/bunsen/bunsen-docs/helpfile-bl-alternatives.txt&quot; --width=900 --height=700)
+    _M
+    MXIL(bl-help-pipemenu,help,Help)
+    S
+    MXIL(bl-kb-pipemenu,keybinds,Display Keybinds)
+    S
+    _exec(Lock Screen,bl-lock)
+    _exec(Exit,bl-exit)
+  _M  
+_ObMenu

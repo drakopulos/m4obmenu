@@ -1,0 +1,41 @@
+define(`NL',`
+')dnl
+define(`OB', `~/.config/openbox')dnl
+define(`ObMenu_',
+`<?xml version="1.0" encoding="utf-8"?>
+<openbox_menu xmlns="http://openbox.org/"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://openbox.org/
+              file:///usr/share/openbox/menu.xsd">')dnl
+define(`_ObMenu',`</openbox_menu>')dnl
+define(`MENU',`<menu $1>')dnl
+define(`_MENU',`</menu>')dnl
+define(`ITEM', `<item $1>')dnl
+define(`_ITEM', `</item>')dnl
+define(`ACTION', `<action $1>')dnl
+define(`_ACTION', `</action>')dnl
+define(`EXECUTE', `<execute>$1')dnl
+define(`_EXECUTE', `</execute>')dnl
+define(`SEPARATOR', `<separator$1/>')dnl
+define(`ID', `id="$1"')dnl
+define(`NAME', `name="$1"')dnl
+define(`LABEL', `label="$1"')dnl
+define(`XCUTE',`execute="$1"')dnl
+define(`MIL', `MENU(ID(`$1') LABEL(`$2'))')dnl
+define(`MXIL',`MENU(XCUTE(`$1') ID(`$2') LABEL(`$3')`/')')dnl
+define(`_M',`_MENU')dnl
+define(`IL',`ITEM(LABEL(`$1'))')dnl
+define(`AX',`ACTION(NAME(`Execute'))')dnl
+define(`AN',`ACTION(NAME(`$1')`/')')dnl
+define(`_A',`_ACTION')dnl
+define(`X',`EXECUTE($1`'_EXECUTE)')dnl
+define(`_I',`_ITEM')dnl
+define(S, `SEPARATOR')dnl
+define(SL, `SEPARATOR(` 'LABEL($1))')dnl
+define(`ISBLTERM', `esyscmd(ls /etc/alternatives/bl-terminal-emulator 2>1)')dnl
+define(`BLTERM_TRUE',`/etc/alternatives/bl-terminal-emulator
+')dnl
+define(`BLTERMINAL',`bl-terminal-emulator')dnl
+define(`XTERMINAL',`x-terminal-emulator')dnl
+define(`TERM', ifelse(ISBLTERM,BLTERM_TRUE,BLTERMINAL,XTERMINAL))dnl
+define(`_exec', `IL($1) AX X($2) _A _I')dnl
